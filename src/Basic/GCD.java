@@ -1,3 +1,5 @@
+package Basic;
+
 public class GCD {
     public static void main(String[] args) {
         int abc = GreatestCommonDivisor(9,18);

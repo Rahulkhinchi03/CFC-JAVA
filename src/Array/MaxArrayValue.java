@@ -1,3 +1,5 @@
+package Array;
+
 import java.util.Scanner;
 
 public class MaxArrayValue {
@@ -11,7 +13,8 @@ public class MaxArrayValue {
         
 
 
-
+return array;
     }
+
 
 }
