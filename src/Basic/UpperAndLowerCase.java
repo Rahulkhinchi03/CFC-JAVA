@@ -4,6 +4,7 @@ public class UpperAndLowerCase {
     public static void main(String[] args) {
          Character('r');
 
+
     }
 
     public static void Character(char Case) {
@@ -15,7 +16,7 @@ public class UpperAndLowerCase {
             System.out.println("It is Lowercase");
         }
 
-
-
     }
+
+
 }
