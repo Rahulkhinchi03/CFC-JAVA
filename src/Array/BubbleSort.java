@@ -2,31 +2,33 @@ package Array;
 
 import java.util.Arrays;
 
+// Sorting Odd first and Even after
+
 public class BubbleSort {
     public static void main(String[] args) {
 
-        int[] arr = {4, 1, 5, 9, 3, 2};
-        int temp;
-        int natural;
+        int[] number = {4, 2, 1, 8, 5, 3, 0, 6};
+        Sorting(number);
+        System.out.println(Arrays.toString(number));
+    }
 
 
-        for (int i = 0; i < arr.length; i++) {
-            natural = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[natural]) {
-                    natural = j;
+    public static void Sorting(int[] number) {
+            for (int i = 0; i < number.length; i++) {
+                for (int j = 0; j < number.length - i - 1; j++) {
+
+                    if (number[j] > number[j + 1]) {
+
+                        int temp = number[i];
+                        number[i] = number[j];
+                        number[j] = temp;
+
+                    }
                 }
             }
-            temp = arr[i];
-            arr[i] = arr[natural];
-            arr[natural] = temp;
         }
-            for (int e : arr) {
-                System.out.print(e + " ");
-            }
 
     }
-}
 
 
 

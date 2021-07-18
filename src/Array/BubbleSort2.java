@@ -6,35 +6,23 @@ public class BubbleSort2 {
     public static void main(String[] args) {
 
 
-        int[] arr = {9, 5, 3, 6, 1, 2, 8, 4, 7};
-        int temp;
-        int natural;
+        int[] number = {4, 2, 1, 8, 5, 3, 0, 6};
+        Sorting(number);
+        System.out.println(Arrays.toString(number));
 
-        for (int i = 0; i <arr.length; i++) {
-            natural=i;
-            for (int j = i+1; j <arr.length; j++) {
+    }
 
-                if(arr[j] < arr[natural]) {
-                    natural = j;
+    public static void Sorting(int[] number) {
+        for (int i = 0; i < number.length - 1; i++) {
+            for (int j = 0; j < number.length - i - 1; j++) {
+
+                if (number[j] > number[j + 1]) {
+                    int temp = number[j];
+                    number[j] = number[j + 1];
+                    number[j + 1] = temp;
+
                 }
             }
-            temp = arr[i];
-            arr[i] = arr[natural];
-            arr[natural] = temp;
         }
-        for(int e: arr) {
-            System.out.print(e + " ");
-        }
-
-
-
-
-
-
-
-
-
-
-
     }
 }
