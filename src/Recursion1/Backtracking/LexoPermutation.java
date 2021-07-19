@@ -13,6 +13,19 @@ public class LexoPermutation {
         lexoPermute(" ",FreqMatrix(s),s.length());
     }
 
+    public static int[] FreqMatrix(String str) {
+        int[] freq = new int[26];
+
+        for (int i = 0; i < str.length(); i++) {
+
+            int index = str.charAt(i) - 'a';
+            freq[index]++;
+        }
+        return freq;
+    }
+
+
+
     public static void lexoPermute(String process, int[] FreqMatrix, int length) {
 
         if(length == 0) {
@@ -30,18 +43,5 @@ public class LexoPermutation {
         }
     }
 
-
-
-
-    protected static int[] FreqMatrix(String str) {
-        int[] freq = new int[26];
-
-        for (int i = 0; i < str.length(); i++) {
-
-            int index = str.charAt(i) - 'a';
-            freq[index]++;
-        }
-        return freq;
-    }
 
 }

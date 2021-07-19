@@ -1,7 +1,7 @@
 package Recursion1.Backtracking;
 import java.util.Arrays;
 
-public class RotateArray {
+public class Practice {
     public static void main(String[] args) {
 
         int[] nums = {3,7,9,5,1,8,0,6,4};
