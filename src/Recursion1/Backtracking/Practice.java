@@ -4,39 +4,57 @@ import java.util.Arrays;
 public class Practice {
     public static void main(String[] args) {
 
-        int[] nums = {3,7,9,5,1,8,0,6,4};
-        int k = 3;
-        rotate(nums, k);
-        System.out.println(Arrays.toString(nums));
-
+        int n = 4;
+        boolean[][] board = new boolean[n][n];
+        nQueens(board,0);
     }
 
-    public static void reverse(int[] a, int i, int j) {
+    private static void nQueens(boolean[][] board, int row) {
 
-        int partOne = i;
-        int partTwo = j;
-
-        while(partOne < partTwo) {
-
-            int temp = a[partOne];
-            a[partOne] = a[partTwo];
-            a[partTwo] = temp;
-
-            partOne++;
-            partTwo--;
+        if(row == board.length) {
+            System.out.println(Arrays.deepToString(board));
+            return;
         }
+
+            for (int i = 0; i < board.length; i++) {
+                if(isSafePlace(board, row, i)) {
+                    board[row][i] = true;
+                    nQueens(board, row+1);
+                    board[row][i] = false;
+                }
+            }
     }
 
-    public static void rotate(int[] nums, int k) {
 
-        k = k % nums.length;
+    private static boolean isSafePlace(boolean[][] board, int row, int column) {
 
-        if(k < 0) {
-            k+= nums.length;
+        // Upward
+        for (int i = 0; i < row; i++) {
+            if(board[i][column]) {
+                return false;
+            }
+
+            // LeftDiagonal
+            int LeftDiagonal = Math.min(row, column);
+            for (int j = 1; j <= LeftDiagonal ; j++) {
+                if(board[row-1][column-1]) {
+                    return false;
+                }
+            }
+
+            // RightDiagonal
+            int RightDiagonal = Math.min(row, board.length-column-1);
+            for (int j = 1; j <= RightDiagonal ; j++) {
+                if(board[row-1][column+1]) {
+                    return false;
+                }
+            }
         }
-
-        reverse(nums, 0 , nums.length-k-1);
-        reverse(nums, nums.length-k, nums.length-1);
-        reverse(nums, 0, nums.length-1);
+        return true;
     }
 }
+
+
+
+
+

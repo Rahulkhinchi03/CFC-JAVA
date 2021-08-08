@@ -3,8 +3,8 @@ package Recursion1.Backtracking;
 public class RatInAMaze {
     public static void main(String[] args) {
 
-        int row = 5;
-        int column = 5;
+        int row = 4;
+        int column = 4;
         int COUNT = maze(row, column);
         System.out.println(COUNT);
     }

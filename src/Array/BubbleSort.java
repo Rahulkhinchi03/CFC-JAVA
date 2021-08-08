@@ -1,8 +1,5 @@
 package Array;
-
 import java.util.Arrays;
-
-// Sorting Odd first and Even after
 
 public class BubbleSort {
     public static void main(String[] args) {
@@ -11,7 +8,6 @@ public class BubbleSort {
         Sorting(number);
         System.out.println(Arrays.toString(number));
     }
-
 
     public static void Sorting(int[] number) {
             for (int i = 0; i < number.length; i++) {
@@ -22,13 +18,8 @@ public class BubbleSort {
                         int temp = number[i];
                         number[i] = number[j];
                         number[j] = temp;
-
                     }
                 }
             }
-        }
-
     }
-
-
-
+ }

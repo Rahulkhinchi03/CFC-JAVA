@@ -26,19 +26,19 @@ public class LexoPermutation {
 
 
 
-    public static void lexoPermute(String process, int[] FreqMatrix, int length) {
+    public static void lexoPermute(String process, int[] freqMatrix, int length) {
 
         if(length == 0) {
             System.out.println(process);
             return;
         }
 
-        for (int i = 0; i < FreqMatrix.length ; i++) {
+        for (int i = 0; i < freqMatrix.length ; i++) {
 
-            if(FreqMatrix[i] > 0) {
-                FreqMatrix[i]--;
-                lexoPermute(process + (char) (i+'a'), FreqMatrix, length-1);
-                FreqMatrix[i]++;
+            if(freqMatrix[i] > 0) {
+                freqMatrix[i]--;
+                lexoPermute(process + (char) (i+'a'), freqMatrix, length-1);
+                freqMatrix[i]++;
             }
         }
     }

@@ -1,5 +1,4 @@
 package Recursion1.Backtracking;
-
 import java.util.Arrays;
 
 public class NQueens {
